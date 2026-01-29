@@ -1,13 +1,14 @@
-// import React from 'react'
-// import ReactDom from 'react-dom/client'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
+import './index.css'
 import { SocketProvider } from './context/SocketContext.tsx'
+import { BrowserRouter } from 'react-router-dom'
 
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <BrowserRouter>
+    <SocketProvider>
+      <App />
+    </SocketProvider>
+  </BrowserRouter>
 
-createRoot(document.getElementById('root')!).render(
- <SocketProvider>
-    <App/>
-  </SocketProvider>
 )
